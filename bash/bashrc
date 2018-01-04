@@ -117,8 +117,8 @@ alias_files=(
 )
 
 for alias_file in ${alias_files[@]}; do
-  if [ -f ~/.bash_aliases/${alias_file} ]; then
-      . ~/.bash_aliases/${alias_file}
+  if [ -f bash/alias/${alias_file} ]; then
+      . bash/alias/${alias_file}
   fi
 done
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,8 +147,8 @@ if [ $SHELL = "/bin/bash" ]; then
     source /etc/bash_completion.d/docker-machine-wrapper.bash
 
     # Configuration du prompt
-    if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
-        . ~/.bash-git-prompt/gitprompt.sh
+    if [ -f bash/prompt/gitprompt.sh ]; then
+        . bash/prompt/gitprompt.sh
     fi
 fi
 

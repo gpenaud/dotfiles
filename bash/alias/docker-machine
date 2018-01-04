@@ -1,0 +1,15 @@
+
+function dm-enter() {
+  MACHINE=$1
+  if [ -z $MACHINE ]; then
+    MACHINE=default
+  fi
+  
+  eval $(docker-machine env $MACHINE)
+  bash
+}
+
+function dm-exit() {
+  eval $(docker-machine env -u)
+  bash
+}

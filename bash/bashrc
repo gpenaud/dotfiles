@@ -8,6 +8,11 @@ case $- in
       *) return;;
 esac
 
+# determine dotfiles path
+if [ -z $DOTFILES_PATH ]; then
+  DOTFILES_PATH=$HOME/dotfiles
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -117,14 +122,14 @@ alias_files=(
 )
 
 for alias_file in ${alias_files[@]}; do
-  if [ -f bash/alias/${alias_file} ]; then
-      . bash/alias/${alias_file}
+  if [ -f $DOTFILES_PATH/bash/alias/${alias_file} ]; then
+      . $DOTFILES_PATH/bash/alias/${alias_file}
   fi
 done
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-if [ -f ~/.bash_aliases/docker ] && [ dpkg -l docker &>/dev/null ]; then
-    . ~/.bash_aliases/docker
+if [ -f $DOTFILES_PATH/bash/alias/docker ] && [ dpkg -l docker &>/dev/null ]; then
+    . $DOTFILES_PATH/bash/alias/docker
 fi
 
 if [ -f ~/.bash_scripts/merge_history.bash ]; then
@@ -147,8 +152,8 @@ if [ $SHELL = "/bin/bash" ]; then
     source /etc/bash_completion.d/docker-machine-wrapper.bash
 
     # Configuration du prompt
-    if [ -f bash/prompt/gitprompt.sh ]; then
-        . bash/prompt/gitprompt.sh
+    if [ -f $DOTFILES_PATH/bash/prompt/gitprompt.sh ]; then
+        . $DOTFILES_PATH/bash/prompt/gitprompt.sh
     fi
 fi
 

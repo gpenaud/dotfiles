@@ -1,0 +1,11 @@
+alias cloudy='ssh ovh "source /var/lib/ovh/.profile; /usr/local/lib/cloudy/xi-cloudy/bin/cloudy"'
+
+# clouds
+alias ore='openstack --os-cloud orange-eu-west-0'
+alias orel='openstack --os-cloud orange-eu-west-0 server list'
+alias ora='openstack --os-cloud orange-as-south-0'
+alias oral='openstack --os-cloud orange-as-south-0 server list'
+alias ovs='openstack --os-cloud ovh --os-region-name=SBG1'
+alias ovsl='openstack --os-cloud ovh --os-region-name=SBG1 server list'
+alias ovg='openstack --os-cloud ovh --os-region-name=GRA1'
+alias ovgl='openstack --os-cloud ovh --os-region-name=GRA1 server list'

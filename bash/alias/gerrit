@@ -1,0 +1,1 @@
+alias gerrit='ssh -p 29418 gpenaud@gerrit.xilopix.net gerrit'

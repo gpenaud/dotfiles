@@ -1,0 +1,3 @@
+alias ansible-test='/usr/bin/ansible-playbook --extra-vars "ansible_sudo_pass=Ieth9eorai"'
+alias ansible-stop='vagrant global-status | grep running | colrm 8 | xargs -L 1 | xargs sudo vagrant destroy -f'
+alias ansible-playbook='/usr/bin/ansible-playbook --extra-vars "ansible_sudo_pass=$ANSIBLE_SUDO_PASS"'

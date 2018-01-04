@@ -1,0 +1,2 @@
+# alias for remotely work on nodes #
+alias xrpuppet='/home/gpenaud/taf/xi_scripts/gpenaud/xi-remote/xi-remote -n puppet'

@@ -1,0 +1,2 @@
+alias vagrant-test='rsync -avz --exclude='.git' /home/gpenaud/taf/xi_puppet/ /virtual/test/src-puppet/; vagrant-tester'
+alias vagrant-retest='rsync -avz --exclude='.git' /home/gpenaud/taf/xi_puppet/ /virtual/test/src-puppet/; vagrant ssh -c '

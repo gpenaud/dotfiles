@@ -1,6 +1,5 @@
 #! /bin/bash
 
-DOTFILES_DIR=/home/gpenaud/dotfiles
-HOME_DIR=/home/gpenaud
+DOTFILES_DIR=/home/guillaume/dotfiles
 
-ln -s $DOTFILES_DIR/bash/bashrc $HOME_DIR/.bashrc
+ln -s $DOTFILES_DIR/bash/bashrc $HOME/.bashrc

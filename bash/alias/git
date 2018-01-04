@@ -1,0 +1,56 @@
+###########################
+######## alias git ########
+###########################
+
+## commande de consultation ##
+alias gs='git status'
+alias gl='git log --oneline --decorate --graph'
+alias gll='git log --oneline --decorate --graph --all'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gsh='git show'
+alias gbl='git blame'
+alias gb='git branch'
+alias gsq='bash /home/gpenaud/taf/misc/gpenaud/git/squasher'
+
+## commande de manipulation du dépôt local ##
+alias ga='git add'
+alias gca='git commit -a -m'
+alias gcam='git commit --amend -a'
+alias gck='git checkout'
+alias gch='git cherry-pick'
+alias grs='git reset --hard'
+alias gcl='git reset HEAD'
+
+## commande de fusion et de rebasement ##
+alias gmg='git merge'
+alias grb='git rebase'
+alias gst='git stash'
+alias gstp='ansible-backup; git stash pop'
+
+## commande de fusion et de rebasement ##
+alias gmg='git merge'
+alias grb='git rebase'
+alias gckp='git checkout production'
+alias gckd='git checkout develop'
+alias grbp='git rebase production'
+alias grbd='git rebase develop'
+
+## commande de manipulation de fichiers ##
+alias gr='git rm'
+alias gm='git mv'
+
+## commande de manipulation de dépôts distants ##
+alias gpl='git pull --rebase'
+alias gpsh='gpl && git push'
+
+## pusher ##
+alias gra="pusher add"
+alias grp="pusher push"
+alias grd="pusher delete"
+
+## review ##
+alias grv='git review'
+
+## puppet ##
+alias rf='ssh puppet sudo git -C /srv/puppet/develop pull --rebase'

@@ -1,0 +1,1 @@
+alias lxcl='sudo lxc-ls --fancy'

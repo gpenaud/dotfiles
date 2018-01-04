@@ -1,0 +1,51 @@
+######################
+### alias généraux ###
+######################
+alias ls='LC_COLLATE=C ls --color'
+alias l='LC_COLLATE=C ls -lish'
+alias ll='LC_COLLATE=C ls -lisah'
+alias s='sudo '
+alias sudo='sudo '
+alias me="ip a sh dev eth0 | grep 'inet ' | awk '{print \$2}' | cut -d'/' -f 1"
+alias du='du -hs'
+alias rm='rm -vI'
+alias c='. .mycd'
+alias G='G'
+alias h='$HOME/bin/help.sh'
+alias mountel='sudo mount /dev/disk/by-id/usb-Samsung_File-CD_Gadget_0123456789ABCDEF-0:0 && sudo mount /dev/disk/by-id/usb-Samsung_File-CD_Gadget_0123456789ABCDEF-0:1'
+alias umountel='sudo umount /media/main@phone && sudo umount /media/storage@phone'
+alias chaf='c /home/me/taf/asrall'
+alias ssha='ssh-add /home/me/.ssh/id_rsa'
+alias aprl='apachectl -t && apachectl graceful'
+alias pg='ping -c 2 google.fr'
+alias xldap='ldapvi  --tls allow --host ldaps://ldap-master-01.xilopix.net -D cn=admin,dc=xilopix,dc=net -w HeyImAFalsePAssword --discover'
+alias ssh='TERM=xterm ssh'
+alias ptest='cd /virtual/test/infra'
+alias deployer='cd /home/gpenaud/taf/xi_scripts/xi-deployer/bin'
+alias nova='cd /home/gpenaud/taf/xi_cluster/xi-nova/bin'
+alias can='cd /home/gpenaud/taf/infrastructure/ansible'
+alias ter='cd /home/gpenaud/taf/infrastructure/terraform'
+
+###########################
+###### alias screen #######
+###########################
+alias scls='screen -ls'
+alias sccr='screen -S'
+alias scr='screen -r'
+
+###########################
+###### alias virsh ########
+###########################
+alias virsh='virsh --connect qemu:///system'
+alias vssh='ssh installer@$(cat /var/lib/libvirt/dnsmasq/xilopix.leases | cut -f3 -d" "'
+
+#############################
+###### alias xilopix ########
+#############################
+#alias passxi='export PASSWORD_STORE=/home/gpenaud/taf/misc/password && export PASSWORD_STORE_DIR=$PASSWORD_STORE/ops && export GNUPGHOME=$PASSWORD_STORE/.xilopix_gnupg && cd $PASSWORD_STORE_DIR'
+alias passxi='export PASSWORD_STORE=/home/gpenaud/taf/password-store && export PASSWORD_STORE_DIR=$PASSWORD_STORE/ops && export GNUPGHOME=$PASSWORD_STORE/.xilopix_gnupg && cd $PASSWORD_STORE_DIR'
+alias eris_umount='umount -l $(mount | grep -oP "/dev/main/eris-preprod on /[^\s]+" | cut -d" " -f 3)'
+alias visudo='EDITOR=/usr/bin/vim visudo'
+alias ldapvi='ldapvi --tls allow --host ldaps://ldap-master-01.xilopix.net -D cn=admin,dc=xilopix,dc=net -w HeyImAFalsePAssword'
+
+alias sctl='sudo systemctl '

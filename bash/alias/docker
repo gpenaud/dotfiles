@@ -1,0 +1,9 @@
+############################
+###### alias docker ########
+############################
+alias dkr='docker run'
+alias dkls='docker ps'
+alias dkk='docker kill -s 9'
+alias dkl='docker logs'
+alias dkstopall="docker stop $(docker ps | awk '{if (NR!=1) print $NF}')"
+alias dktest='puppet apply --pluginsync  --environment test --hiera_config=/srv/puppet/test/puppet/modules/puppet/files/master/hiera.yaml --modulepath=/srv/puppet/test/puppet/modules/:/srv/puppet/test/puppet/modules-ext/  /srv/puppet/test/puppet/modules/puppet/files/master/site.pp'

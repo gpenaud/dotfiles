@@ -1,0 +1,9 @@
+#############################
+###### alias apt-get ########
+#############################
+alias apt='sudo apt-get '
+alias apti='apt-get install -y'
+alias aptp='apt-get purge'
+alias apta='apt-get autoremove'
+alias aptu='apt-get update'
+alias aptug='apt-get upgrade'

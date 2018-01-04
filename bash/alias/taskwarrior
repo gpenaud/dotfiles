@@ -1,0 +1,6 @@
+#############################
+##### alias taskwarrior #####
+#############################
+
+alias t='task'
+alias tadd='task add'

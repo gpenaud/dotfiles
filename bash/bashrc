@@ -98,7 +98,6 @@ export GNUPGHOME='/home/gpenaud/.gnupg'
 export VAGRANT_HOME=/ssd/vagrant.d
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 export ANSIBLE_CONFIG_PATH=/home/gpenaud/taf/infrastructure/ansible/roles/ansible.cfg
-export ANSIBLE_SUDO_PASS=$(cat /home/gpenaud/taf/infrastructure/ansible/deployment/.credentials/sudo_deployer.key)
 export ANSIBLE_KEYFILE=/home/gpenaud/.ssh/deploy
 
 # Alias definitions.
@@ -146,22 +145,8 @@ fi
 
 
 if [ $SHELL = "/bin/bash" ]; then
-    # sourcing des scripts pour docker-machine
-    source /etc/bash_completion.d/docker-machine.bash
-    source /etc/bash_completion.d/docker-machine-prompt.bash
-    source /etc/bash_completion.d/docker-machine-wrapper.bash
-
     # Configuration du prompt
     if [ -f $DOTFILES_PATH/bash/prompt/gitprompt.sh ]; then
         . $DOTFILES_PATH/bash/prompt/gitprompt.sh
     fi
 fi
-
-# set ssh-agent
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-    eval `ssh-agent`
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-
-ssh-add -l | grep "The agent has no identities" && ssh-add
-source <(kubectl completion bash)

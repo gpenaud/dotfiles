@@ -54,8 +54,8 @@ define_git_prompt_colors() {
 
   GIT_PROMPT_START_USER="${Yellow}${PathShort}${ResetColor}"
   GIT_PROMPT_START_ROOT="${Yellow}${PathShort}${ResetColor}"
-  GIT_PROMPT_END_USER=" \n${White}[${Time12a}] ${Green}$(id -un)${ResetColor}@$(hostname)${Cyan}$(__docker_machine_ps1)${ResetColor}${Green}${ScreenState} $ ${ResetColor}"
-  GIT_PROMPT_END_ROOT=" \n${White}[${Time12a}] ${Magenta}$(id -un)${ResetColor}@$(hostname)${Cyan}$(__docker_machine_ps1)${ResetColor}${Magenta}${ScreenState} # ${ResetColor}"
+  GIT_PROMPT_END_USER=" \n${White}[${Time12a}] ${Green}$(id -un)${ResetColor}@$(hostname)${Green}${ScreenState} $ ${ResetColor}"
+  GIT_PROMPT_END_ROOT=" \n${White}[${Time12a}] ${Magenta}$(id -un)${ResetColor}@$(hostname)${Magenta}${ScreenState} # ${ResetColor}"
 
   # Please do not add colors to these symbols
   GIT_PROMPT_SYMBOLS_AHEAD="↑·"         # The symbol for "n versions ahead of origin"

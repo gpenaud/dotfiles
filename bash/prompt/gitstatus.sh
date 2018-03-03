@@ -20,7 +20,7 @@ if [ -z "${__GIT_PROMPT_DIR}" ]; then
 fi
 
 if [[ -z "$__GIT_PROMPT_COLORS_FILE" ]]; then
-  for dir in "$HOME" "$__GIT_PROMPT_DIR" ; do
+  for dir in "$DOTFILES_PATH" "$__GIT_PROMPT_DIR" ; do
     for pfx in '.' '' ; do
       file="$dir/${pfx}git-prompt-colors.sh"
       if [[ -f "$file" ]]; then

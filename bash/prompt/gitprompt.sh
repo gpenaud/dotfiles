@@ -25,7 +25,7 @@ function git_prompt_dir()
 # gp_set_file_var ENVAR SOMEFILE
 #
 # If ENVAR is set, check that it's value exists as a readable file.  Otherwise,
-# Set ENVAR to the path to SOMEFILE, based on $HOME, $__GIT_PROMPT_DIR, and the
+# Set ENVAR to the path to SOMEFILE, based on $DOTFILES_PATH, $__GIT_PROMPT_DIR, and the
 # directory of the current script.  The SOMEFILE can be prefixed with '.', or
 # not.
 #
@@ -42,7 +42,7 @@ function gp_set_file_var() {
     fi
   else  # envar is not set, or it's set to a different file than requested
     eval "$envar="      # set empty envar
-    gp_maybe_set_envar_to_path "$envar" "$HOME/.$file" "$HOME/$file" "$HOME/lib/$file" && return 0
+    gp_maybe_set_envar_to_path "$envar" "$DOTFILES_PATH/.$file" "$DOTFILES_PATH/$file" "$DOTFILES_PATH/lib/$file" && return 0
     git_prompt_dir
     gp_maybe_set_envar_to_path "$envar" "$__GIT_PROMPT_DIR/$file" "${0##*/}/$file"     && return 0
   fi

@@ -92,8 +92,8 @@ fi
 
 # load environment variables
 
-export DOTFILES_DIR=/home/gpenaud/taf/personal/dotfiles
-source $DOTFILES_DIR/environment/work.sh
+export DOTFILES_PATH=/home/gpenaud/taf/personal/dotfiles
+source $DOTFILES_PATH/environment/work
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

@@ -22,8 +22,12 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 [ $SHELL = "/bin/bash" ] && shopt -s checkwinsize
 
 # load environment variables
-export DOTFILES_PATH=/home/gpenaud/taf/personal/dotfiles
-source $DOTFILES_PATH/environment/work
+export DOTFILES_PATH=__DOTFILES_DIR__
+export DOTFILES_ENV=$DOTFILES_PATH/environment/__DOTFILES_ENV__
+
+if [ -z "$DOTFILES_ENV" ]; then
+  . $DOTFILES_PATH/environment/$DOTFILES_ENV
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

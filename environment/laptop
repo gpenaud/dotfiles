@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export EDITOR=vim
 export GNUPGHOME=$HOME/.gnupg
 export VAGRANT_HOME=$HOME/vagrant.d
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+export SHELL_SIZE=$(stty -a | grep columns | tr -d ';' | cut -d' ' -f 7)

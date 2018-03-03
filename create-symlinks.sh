@@ -1,7 +1,8 @@
 #! /bin/bash
 
-DOTFILES_DIR=/home/gpenaud/dotfiles
-HOME_DIR=/home/gpenaud
+export DOTFILES_DIR=${DOTFILES_DIR:-$HOME}/dotfiles
 
-rm $HOME_DIR/.bashrc
-ln -s $DOTFILES_DIR/bash/bashrc $HOME_DIR/.bashrc
+rm $HOME/.bashrc
+ln -s $DOTFILES_DIR/bash/bashrc $HOME/.bashrc
+
+sed -i "s@__DOTFILES_DIR___@$DOTFILES_DIR@" $DOTFILES_DIR/bash/bashrc

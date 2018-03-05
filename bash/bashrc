@@ -8,6 +8,15 @@ case $- in
       *) return;;
 esac
 
+# get script path
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -21,12 +30,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # update the values of LINES and COLUMNS.
 [ $SHELL = "/bin/bash" ] && shopt -s checkwinsize
 
-# load environment variables
-export DOTFILES_PATH=__DOTFILES_DIR__
-export DOTFILES_ENV=$DOTFILES_PATH/environment/__DOTFILES_ENV__
-
-if [ -z "$DOTFILES_ENV" ]; then
-  . $DOTFILES_PATH/environment/$DOTFILES_ENV
+# load environment
+if [ -e "${DIR}/env_loader" ]; then
+  . ${DIR}/env_loader
 fi
 
 # Alias definitions.

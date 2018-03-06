@@ -72,13 +72,16 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-   eval `ssh-agent`
-   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
+if grep "default" <<< $DOTFILES_ENV >&/dev/null; then
+  echo "hey"
+  if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+     eval `ssh-agent`
+     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+  fi
 
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l | grep "The agent has no identities" && ssh-add
+  export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+  ssh-add -l | grep "The agent has no identities" && ssh-add
+fi
 
 if [ $SHELL = "/bin/bash" ]; then
     # Configuration du prompt

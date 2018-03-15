@@ -8,9 +8,9 @@ a symbolic link to $HOME/.bashrc
 ## Installation
 `
 DOTFILES_DIR=some_dir \
-DOTFILES_ENV=laptop \
+DOTFILES_ENV_FILE=laptop \
 bash setup.sh
 `
 
-The DOTFILES_ENV will source some environment variable file, specific to
+The DOTFILES_ENV_FILE will source some environment variable file, specific to
 environnement

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 export DOTFILES_DIR=${DOTFILES_DIR:-$HOME/dotfiles}
-export DOTFILES_ENV=${DOTFILES_DIR}/environment/${DOTFILES_ENV}
+export DOTFILES_ENV=${DOTFILES_DIR}/environment/${DOTFILES_ENV_FILE}
 
 rm ${HOME}/.bashrc
 ln -s ${DOTFILES_DIR}/bash/bashrc ${HOME}/.bashrc

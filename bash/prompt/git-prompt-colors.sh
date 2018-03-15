@@ -52,9 +52,11 @@ define_git_prompt_colors() {
      esac
   fi
 
+  export PROMPT_COLOR=${PROMPT_COLOR:-Green}
+
   GIT_PROMPT_START_USER="${Yellow}${PathShort}${ResetColor}"
   GIT_PROMPT_START_ROOT="${Yellow}${PathShort}${ResetColor}"
-  GIT_PROMPT_END_USER=" \n${White}[${Time12a}] ${Green}$(id -un)${ResetColor}@$(hostname)${Green}${ScreenState} $ ${ResetColor}"
+  GIT_PROMPT_END_USER=" \n${White}[${Time12a}] ${!PROMPT_COLOR}$(id -un)${ResetColor}@$(hostname)${!PROMPT_COLOR}${ScreenState} $ ${ResetColor}"
   GIT_PROMPT_END_ROOT=" \n${White}[${Time12a}] ${Magenta}$(id -un)${ResetColor}@$(hostname)${Magenta}${ScreenState} # ${ResetColor}"
 
   # Please do not add colors to these symbols

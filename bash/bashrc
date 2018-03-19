@@ -72,8 +72,7 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
-if grep "default" <<< $DOTFILES_ENV >&/dev/null; then
-  echo "hey"
+if $SSH_AGENT_ENABLE; then
   if [ ! -S ~/.ssh/ssh_auth_sock ]; then
      eval `ssh-agent`
      ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock

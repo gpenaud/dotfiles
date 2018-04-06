@@ -47,6 +47,7 @@ alias_files=(
   generic
   gerrit
   git
+  kubernetes
   lxc
   remote
   ssh

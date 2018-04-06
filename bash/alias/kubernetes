@@ -1,0 +1,6 @@
+# ----------------
+# alias kubernetes
+# ----------------
+
+alias kl='kubectl'
+alias kls='kubectl --namespace kube-system'

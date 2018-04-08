@@ -25,6 +25,7 @@ alias nova='cd /home/gpenaud/taf/xi_cluster/xi-nova/bin'
 alias can='cd /home/gpenaud/taf/infrastructure/ansible'
 alias ter='cd /home/gpenaud/taf/infrastructure/terraform'
 alias printenv='printenv | sort'
+alias ydl='youtube-dl -x --audio-format mp3'
 
 ###########################
 ###### alias screen #######

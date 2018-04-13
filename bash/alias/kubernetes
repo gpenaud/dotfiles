@@ -2,7 +2,7 @@
 # alias kubernetes
 # ----------------
 
-alias kl='kubectl'
-alias kls='kubectl --namespace kube-system'
-alias lkl='kubectl --certificate-authority=/tmp/cfssl_certs/ca.pem --client-certificate=/tmp/cfssl_certs/kubernetes.pem --client-key=/tmp/cfssl_certs/kubernetes-key.pem --server=https://apiserver.k8s.lan:6443'
-alias lkls='kubectl --namespace kube-system --certificate-authority=/tmp/cfssl_certs/ca.pem --client-certificate=/tmp/cfssl_certs/kubernetes.pem --client-key=/tmp/cfssl_certs/kubernetes-key.pem --server=https://apiserver.k8s.lan:6443'
+alias kl="kubectl --user='admin' --token='prA5ahie3ohtoo4boogvre6quipheaTh'"
+alias kls="kubectl --user='admin' --token='prA5ahie3ohtoo4boogvre6quipheaTh' --namespace kube-system"
+alias lkl="kubectl --user='admin' --token='prA5ahie3ohtoo4boogvre6quipheaTh' --certificate-authority='/tmp/cfssl_certs/ca.pem' --client-certificate='/tmp/cfssl_certs/kubernetes.pem' --client-key='/tmp/cfssl_certs/kubernetes-key.pem' --server='https://apiserver.k8s.lan:6443'"
+alias lkls="kubectl --namespace kube-system --user='admin' --token='prA5ahie3ohtoo4boogvre6quipheaTh' --certificate-authority='/tmp/cfssl_certs/ca.pem' --client-certificate='/tmp/cfssl_certs/kubernetes.pem' --client-key='/tmp/cfssl_certs/kubernetes-key.pem' --server='https://apiserver.k8s.lan:6443'"

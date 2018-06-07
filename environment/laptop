@@ -2,7 +2,14 @@
 
 export EDITOR=vim
 export GNUPGHOME=$HOME/.gnupg
-export VAGRANT_HOME=$HOME/vagrant.d
+export VAGRANT_HOME=$HOME/.vagrant.d
 export SSH_AGENT_ENABLE=true
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 export SHELL_SIZE=$(stty -a | grep columns | tr -d ';' | cut -d' ' -f 7)
+
+export ANSIBLE_PERSONAL_PATH=${HOME}/taf/ansible
+export ANSIBLE_PERSONAL_CONFIG=${ANSIBLE_PERSONAL_PATH}/ansible.cfg
+export ANSIBLE_PERSONAL_USER=gpenaud
+export ANSIBLE_PERSONAL_PASSWORD=
+export ANSIBLE_PERSONAL_KEYFILE=${HOME}/.ssh/id_rsa
+export ANSIBLE_PERSONAL_PUBKEYFILE=${HOME}/.ssh/id_rsa.pub

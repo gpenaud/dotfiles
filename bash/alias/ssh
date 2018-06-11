@@ -1,1 +1,1 @@
-#alias ssh='TERM=xterm cat ~/.ssh/config.d/* > ~/.ssh/config; ssh'
+alias ssh="find ~/.ssh/config.d/ -name '*' -exec cat 2>/dev/null {} + > ~/.ssh/config; ssh"

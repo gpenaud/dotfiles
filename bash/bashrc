@@ -26,6 +26,8 @@ HISTFILESIZE=5000000
 [ $SHELL = "/bin/bash" ] && shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+export PATH=$PATH:${HOME}/.local/bin
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 [ $SHELL = "/bin/bash" ] && shopt -s checkwinsize
